@@ -6,9 +6,25 @@ The necessary file is index.html. We can add CSS file for styling.
 
 # When creating a project from scratch what usually we need to do first ?
 
-- Create project repository
-- First commit
+- Create project repository - done
+- First commit - done
 - Optional: use npm as package manager.
+
+# Which initial dependencies are we going to use ?
+
+- Bootstrap
+  - Bootstrap dependencies.
+- json-server (to fake a local backend)
+
+# TODO: 
+- Create index.html - done 
+- Add bootstrap to index.html - done
+- Setup basic navbar menu - done
+  - Home
+  - Adopt
+  - About
+  - Contact 
+- Setup hero thingy.
 
 # REST API
 
