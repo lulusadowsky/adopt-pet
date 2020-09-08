@@ -16,15 +16,20 @@ The necessary file is index.html. We can add CSS file for styling.
   - Bootstrap dependencies.
 - json-server (to fake a local backend)
 
-# TODO: 
+# TODO: Always think about mobile first.
 - Create index.html - done 
 - Add bootstrap to index.html - done
 - Setup basic navbar menu - done
   - Home
   - Adopt
+  - Do you want to host a dog? (Apply with a form)
+  - Sponsor/Donate
   - About
   - Contact 
-- Setup hero thingy.
+- Add standard footer
+- Add hero (jumbotron) with the inmediate information we want to convey to the clients.
+- Host page with form
+- Sponsor/Donate page -> Implement a paypal donate button.
 
 # REST API
 
