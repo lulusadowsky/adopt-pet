@@ -20,14 +20,14 @@ The necessary file is index.html. We can add CSS file for styling.
 - Create index.html - done 
 - Add bootstrap to index.html - done
 - Setup basic navbar menu - done
-  - Home
-  - Adopt
+  - Home - done
+  - Adopt - done
   - Do you want to host a dog? (Apply with a form)
   - Sponsor/Donate
-  - About
-  - Contact 
-- Add standard footer
-- Add hero (jumbotron) with the inmediate information we want to convey to the clients.
+  - About - done 
+  - Contact - done
+- Add standard footer - done
+- Add hero (jumbotron) with the inmediate information we want to convey to the clients. - done
 - Host page with form
 - Sponsor/Donate page -> Implement a paypal donate button.
 
