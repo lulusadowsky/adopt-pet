@@ -4,13 +4,14 @@
 }
 
 .jumbotron {
-    background-image: url('../bg-dogs.jpeg');
+    background-image: url('../images/bg-dogs.jpeg');
     height: 80vh;
     background-size: cover;
     background-position: center;
     color: #fff;
     border-radius: 0px!important;
 } 
+
 
 .jumbotron h1 {
     margin: 30px 0;

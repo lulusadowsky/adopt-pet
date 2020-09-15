@@ -27,7 +27,7 @@ The necessary file is index.html. We can add CSS file for styling.
   - About - done 
   - Contact - done
 - Add standard footer - done
-- Add hero (jumbotron) with the inmediate information we want to convey to the clients. - done
+- Add hero (jumbotron) with the inmediate information we want to convey to the clients. - done (though somehow I can't get ONLY the bg blurred, even if I create a separate class)
 - Host page with form
 - Sponsor/Donate page -> Implement a paypal donate button.
 
