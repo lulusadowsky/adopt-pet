@@ -53,3 +53,14 @@ HTTP Methods
     - /pet:
       - BODY: json with pet id. 
 
+How to create HTML cards with JavaScript and add it to the container?
+ 1. Fetch - we need to get the data
+ 2. response - what we get
+ 3. complete stream (in json)
+    - we recevie an array of objects
+ 4. make an html element with that data
+    - now we have an array of objects and we need to create an HTML element for each object;
+    - start with 1 card
+    - create a div in container where you want to implement data from json
+    - use ie document.getElementById('id of the data you want to present').src = dogs[]
+

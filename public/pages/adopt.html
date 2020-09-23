@@ -91,10 +91,23 @@
 
   <script>
 
-    function getDogs() {
+    const dogList = document.querySelector('#dogs');
+    function append(parent, el) {
+      return parent.appendChild(el);
+    }
+
+      function getDogs() {
       fetch("http://localhost:3000/dogs")
         .then(function (res) { return res.json() })
-        .then(dogs => console.log(dogs))
+        .then(dogs =>  { return dogs.map(function(dog){
+          const dogContainer = document.createElement('div');
+          const dogPicture = document.createElement('img');
+          dogContainer.innerHTML = dog.name;
+          dogPicture.innerHTML = dog.picture;
+          append(dogList, dogContainer, dogPicture);
+        })
+
+        })
         .catch(error => console.error(error));  
     }
 
@@ -103,6 +116,7 @@
       getDogs();
 
     });
+
   </script>
 </body>
 
