@@ -46,33 +46,8 @@
 
   <div id="main" class="container main">
     <section id="dogs">
-        <div class="container">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div class="container"></div>
+    </section>
   </div>
 
   <footer class="fixed-bottom">
@@ -90,30 +65,39 @@
     defer></script>
 
   <script>
-
-    const dogList = document.querySelector('#dogs');
-    function append(parent, el) {
-      return parent.appendChild(el);
-    }
-
-      function getDogs() {
-      fetch("http://localhost:3000/dogs")
+    function getDogs() {
+       return fetch("http://localhost:3000/dogs")
         .then(function (res) { return res.json() })
-        .then(dogs =>  { return dogs.map(function(dog){
-          const dogContainer = document.createElement('div');
-          const dogPicture = document.createElement('img');
-          dogContainer.innerHTML = dog.name;
-          dogPicture.innerHTML = dog.picture;
-          append(dogList, dogContainer, dogPicture);
-        })
-
-        })
         .catch(error => console.error(error));  
     }
 
+    function CreateDogCard(dogData) {
+      return `
+        <div class="card">
+          <div class="image-container">
+            <img src="${dogData.picture}" class="img-keep-aspect-ratio" alt="dog picture">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">${dogData.name} - ${dogData.breed}</h5>
+            <p class="card-text">${dogData.description}</p>
+            <a href="#" class="btn btn-primary">ADOPT</a>
+          </div>
+        </div>
+      `;
+    }
+
+    function buildListOfDogsCards(dogs) {
+      const arrayOfHtmlCards = dogs.map(dog => CreateDogCard(dog));
+
+      const dogsContainer = document.querySelector('#dogs .container');
+      dogsContainer.innerHTML = arrayOfHtmlCards.join('');
+    }
+    
+
     window.addEventListener("DOMContentLoaded", (e) => {
 
-      getDogs();
+      getDogs()
+        .then(dogs => buildListOfDogsCards(dogs));
 
     });
 
