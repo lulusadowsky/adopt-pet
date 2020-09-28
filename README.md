@@ -22,14 +22,27 @@ The necessary file is index.html. We can add CSS file for styling.
 - Setup basic navbar menu - done
   - Home - done
   - Adopt - done
+    - Create page with a form.
+    - Adopt button should send the user to the form page and autoselect the type of adoption and be "Long term".
+    - Temporary Housing button should send the user to the form page and autoselect the type of adoption and be "Temporary Housing".
+    - BUT. BOTH buttons should send you to the same form page and use the form.
+    - Form needs: 
+      - Name
+      - Lastname
+      - email
+      - phone number
+      - datepicker
+      - Type of adoption (dropdown)
   - Do you want to host a dog? (Apply with a form)
   - Sponsor/Donate
   - About - done 
   - Contact - done
 - Add standard footer - done
 - Add hero (jumbotron) with the inmediate information we want to convey to the clients. - done (though somehow I can't get ONLY the bg blurred, even if I create a separate class)
-- Host page with form
+- Host (have a dog until an owner is found) page with form
 - Sponsor/Donate page -> Implement a paypal donate button.
+
+# Home Work
 
 # REST API
 
