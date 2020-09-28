@@ -77,3 +77,4 @@ How to create HTML cards with JavaScript and add it to the container?
     - create a div in container where you want to implement data from json
     - use ie document.getElementById('id of the data you want to present').src = dogs[]
 
+`json-server server/db.json --watch`

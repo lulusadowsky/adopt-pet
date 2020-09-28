@@ -12,35 +12,119 @@
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     </head>
   <body>
-  <div class="container-fluid">
-    <section id="form">
-      <section class="row">
-        <section class="col-12 col-sm-6 col-md-3">
-        <form>
-          <div class="form-group">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="First name">
-            </div>
-            <div class="form-group">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Last name">
-            </div>
-          </div>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputNumber">Phone number</label>
-                <input type="number" class="form-control" id="inputNumper" placeholder="Number">
-              </div>
-            </div>
-          </div>
-        </form>
-      </section>
+    <section id="header">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/public/pages/adopt.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Adopt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Host</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sponsor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </section>
-  </section>
-  </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <section class="row">
+            <div class="col-sm">
+              <form id="application-form" class="form-container">
+                <div class="form-row"> 
+                  <div class="form-group col-md-6">
+                    <label for="name">First name</label>
+                    <input id="name" name="name" type="text" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="lastname">Last name</label>
+                      <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Last name" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" class="form-control" placeholder="Email" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="phoneNumber">Phone number</label>
+                    <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" placeholder="Number" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="adoption-type">Type of adoption</label>
+                    <select class="form-control" id="adoption-type" name="adoptionType"required>
+                      <option value=""></option>
+                      <option value="1">Permanent</option>
+                      <option value="2">Temporary</option>
+                    </select>
+                  </div>
+                </div>
+                <button id="submit-button" type="submit" class="btn btn-primary">Submit application</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer class="fixed-bottom">
+      <div class="footer text-center py-3">this is a footer</div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"
+    defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"
+    defer></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"
+    defer></script>
+    <script>
+      function postApplicationForm(formData = {}) {
+      }
+
+      window.addEventListener("DOMContentLoaded", (e) => {
+        const submitButton = document.getElementById("submit-button");
+        const form = document.getElementById("application-form");
+
+        submitButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          form.submit();
+        });
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          const form = event.target;
+          
+          const formData = {
+            name: form.name,
+            lastname: form.lastname,
+            email: form.email,
+            number: form.phoneNumber,
+            adoptionType: form.adoptionType
+          };
+
+          postApplicationForm(formData);
+        })
+      });
+    </script>
  </body>
 </html>
