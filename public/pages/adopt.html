@@ -70,11 +70,18 @@
 
   <script>
     function getDogs() {
-       return fetch("http://localhost:3000/dogs")
+       return fetch("https://dog.ceo/api/breeds/image/random")
         .then(function (res) { return res.json() })
         .catch(error => console.error(error));  
     }
 
+
+    window.addEventListener("DOMContentLoaded", (e) => {
+
+getDogs()
+  .then(dogs => buildListOfDogsCards(dogs));
+
+});
     function CreateDogCard(dogData) {
       return `
         <div class="card">
@@ -92,19 +99,13 @@
     }
 
     function buildListOfDogsCards(dogs) {
-      const arrayOfHtmlCards = dogs.map(dog => CreateDogCard(dog));
+      console.log(dogs)
+      // const arrayOfHtmlCards = dogs.map(dog => CreateDogCard(dog));
 
       const dogsContainer = document.querySelector('#dogs .container');
-      dogsContainer.innerHTML = arrayOfHtmlCards.join('');
+      // dogsContainer.innerHTML = arrayOfHtmlCards.join('');
     }
-    
-
-    window.addEventListener("DOMContentLoaded", (e) => {
-
-      getDogs()
-        .then(dogs => buildListOfDogsCards(dogs));
-
-    });
+  
 
   </script>
 </body>
