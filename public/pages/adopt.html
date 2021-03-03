@@ -70,7 +70,7 @@
 
   <script>
     function getDogs() {
-       return fetch("https://dog.ceo/api/breeds/image/random")
+       return fetch("http://localhost:3000/dogs")
         .then(function (res) { return res.json() })
         .catch(error => console.error(error));  
     }
@@ -86,7 +86,7 @@ getDogs()
       return `
         <div class="card">
           <div class="image-container">
-            <img src="${dogData.picture}" class="img-keep-aspect-ratio" alt="dog picture">
+            <img class="imgmargin" src="${dogData.picture}" class="img-keep-aspect-ratio" alt="dog picture" width=300px>
           </div>
           <div class="card-body">
             <h5 class="card-title">${dogData.name} - ${dogData.breed}</h5>
@@ -100,10 +100,10 @@ getDogs()
 
     function buildListOfDogsCards(dogs) {
       console.log(dogs)
-      // const arrayOfHtmlCards = dogs.map(dog => CreateDogCard(dog));
+      const arrayOfHtmlCards = dogs.map(dog => CreateDogCard(dog));
 
       const dogsContainer = document.querySelector('#dogs .container');
-      // dogsContainer.innerHTML = arrayOfHtmlCards.join('');
+      dogsContainer.innerHTML = arrayOfHtmlCards.join('');
     }
   
 
