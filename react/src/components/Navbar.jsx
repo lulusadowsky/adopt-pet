@@ -1,27 +1,21 @@
 import * as React from 'react';
 
-export function Navbar () {
+export function Navbar ({ children }) {
   return (
     <nav className="">
       <div className="">
         <ul className="">
-          <NavbarItem name="Home" link="/home"/>
-          <NavbarItem name="Adopt" link="/adopt"/>
-          <NavbarItem name="Host" link="/host"/>
-          <NavbarItem name="Sponsor" link="/sponsor"/>
-          <NavbarItem name="About" link="/about"/>
-          <NavbarItem name="Contact" link="/contact"/>
+          {children}
         </ul>
       </div>
     </nav>
   );
 }
 
-function NavbarItem (props) {
-  const { name, link } = props;
+export function NavbarItem ({ children }) {
   return (
     <li className="">
-      <a className="" href="#">{name}</a>
+      {children}
     </li>
   );
 }
